@@ -79,7 +79,7 @@ In order to use CutEr, you need the following programs:
 
   If you have a Linux or an OSX system, then you can run the provided `fetch_protoc.sh` script and follow the instructions.
 
-        ./fetch_protoc.sh
+        scripts/fetch_protoc.sh
 
 Installation
 ------------
