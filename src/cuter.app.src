@@ -1,0 +1,18 @@
+{application, cuter,
+ [{description, "A concolic testing tool for the Erlang functional programming language."},
+  {vsn, "0.2.0"},
+  {registered, []},
+  {mod, { cuter_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    observer, wx, runtime_tools,
+    proper,
+    sasl
+   ]},
+  {env,[]},
+  {modules, []},
+  {maintainers, []},
+  {licenses, ["GNU General Public License v3.0"]},
+  {links, []}
+ ]}.

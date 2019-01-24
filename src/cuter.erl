@@ -299,7 +299,11 @@ z3_timeout([_|Rest]) -> z3_timeout(Rest).
 -spec get_solver_backend([option()]) -> string().
 get_solver_backend(Options) ->
   T = z3_timeout(Options),
-  Cmd = ?PYTHON_CALL ++ " --timeout " ++ integer_to_list(T),
+
+  PrivDir = code:priv_dir(cuter),
+  Python = application:get_env(cuter, python_path, "python"),
+
+  Cmd = Python ++ " -u " ++ PrivDir ++ "/cuter_interface.py" ++ " --timeout " ++ integer_to_list(T),
   case lists:member(?Z3PY, Options) of
       true -> Cmd;
       false -> Cmd ++ " --smt"

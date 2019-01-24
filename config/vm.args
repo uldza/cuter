@@ -1,0 +1,14 @@
+-name cuter@local
+
+-setcookie cuter_cookie
+
+-env ERL_CRASH_DUMP ./log/erlang.crashdump
+-env ERL_FULLSWEEP_AFTER 0
+
++P 256000
++e 256000
++Q 65536
++A 64
++K true
++W w
+-smp enable

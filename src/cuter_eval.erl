@@ -1519,7 +1519,7 @@ make_fun_h(Mod, Func, Args, Servers, Creator, LambdaS, FileDescr) ->
 adjust_arguments(slave, F, CAs, SAs, Fd) when F =:= start; F =:= start_link ->
   Arity = length(CAs),
   SAs_e = cuter_symbolic:ensure_list(SAs, Arity, Fd),
-  Ebin = " -pa " ++ ?EBIN,
+  Ebin = " -pa ebin",
   case CAs of
     [Host] ->
       Name = hd(string:tokens(atom_to_list(node()), "@")),

@@ -1,10 +1,11 @@
-.PHONY: depend dialyzer clean cleandep distclean all utest ftest test suite
+.PHONY: depend dialyzer clean cleandep distclean all utest ftest test suite run
 SHELL := /bin/bash
 
 ###----------------------------------------------------------------------
 ### Orientation information
 ###----------------------------------------------------------------------
 
+REBAR = rebar3
 SRC  = src
 INCLUDE = include
 EBIN = ebin
@@ -140,6 +141,9 @@ vpath %.proto $(SRC)
 vpath %.py $(PRIV)
 
 default: cuter_target
+
+run:
+	$(REBAR) run
 
 suite: utest_target ftest_target
 
