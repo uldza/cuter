@@ -37,5 +37,6 @@ src/cuter_proto_spec.erl
 # Custom rules for development
 dev/*
 temp/
+z3/
 
 _build
