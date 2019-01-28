@@ -57,8 +57,11 @@ generate_new_input(Maps, Model) ->
 -spec serialize(symbolic()) -> list().
 serialize({?SYMBOLIC_PREFIX, SymbVar}) when is_list(SymbVar) -> SymbVar.
 
+-spec deserialize(binary() | list()) -> symbolic().
+deserialize(L) when is_binary(L) ->
+    deserialize(binary_to_list(L));
+
 %% Create a symbolic value from a List representation
--spec deserialize(list()) -> symbolic().
 deserialize(L) when is_list(L) -> {?SYMBOLIC_PREFIX, L}.
 
 %% =============================================================
