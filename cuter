@@ -99,6 +99,7 @@ def main():
   # Run CutEr
   cmd = "erl -noshell {} -eval \"cuter:run({}, {}, {}, {}, [{}])\" -s init stop".format(
     paths, args.module, args.fun, args.args, args.depth, strOpts)
+  print(cmd)
   sys.exit(subp.call(cmd, shell=True))
 
 def getDirectory():
